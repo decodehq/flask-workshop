@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+This is included from task-list
+<br>
+<br>
+{% for task in tasks_list %}
+    Assignee: {{ task.assignee }} <br>
+    Description: {{ task.description }} <br>
+    Priority: {{ task.priority }} <br>
+    {% if task.priority >= 8 %} Do it ASAP! {% endif %}
+    <br>
+{% endfor %}
+{% endblock %}
